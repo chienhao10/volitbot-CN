@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{4BB67305-26EE-40BA-90B7-A51433D810EF}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>VoliBot</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ini\IniFile.cs" />
+    <Compile Include="LoLLauncher.Assets\AsyncHelpers.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Kudos.Dto\PendingKudosDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Leagues.Pojo\LeagueItemDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Leagues.Pojo\LeagueListDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Leagues.Pojo\MiniSeriesDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Account\AccountSummary.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Broadcast\BroadcastNotification.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Catalog.Champion\ChampionDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Catalog.Champion\ChampionSkinDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Catalog.Runes\Rune.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Catalog.Runes\RuneType.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Catalog\Effect.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Catalog\ItemEffect.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Clientfacade.Domain\LoginDataPacket.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game.Map\GameMap.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game.Message\GameNotification.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game.Practice\PracticeGameSearchResult.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Gameinvite.Contract\LobbyStatus.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\BannedChampion.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\BotParticipant.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\ChampionBanInfoDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\GameDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\GameObserver.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\GameTypeConfigDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\ObfruscatedParticipant.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\Participant.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\PlatformGameLifecycleDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\PlayerChampionSelectionDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\PlayerCredentialsDto.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\PlayerParticipant.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\PracticeGameConfig.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Game\StartChampSelectDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Harassment\LcdsResponseString.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Leagues.Client.Dto\SummonerLeagueItemsDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Leagues.Client.Dto\SummonerLeaguesDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Login\AuthenticationCredentials.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Login\Session.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Matchmaking\GameQueueConfig.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Matchmaking\MatchingThrottleConfig.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Matchmaking\MatchMakerParams.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Matchmaking\QueueDodger.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Matchmaking\QueueInfo.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Matchmaking\SearchingForMatchNotification.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Messaging\StoreAccountBalanceNotification.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Messaging\StoreFulfillmentNotification.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Reroll.Pojo\AramPlayerParticipant.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Reroll.Pojo\EogPointChangeBreakdown.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Reroll.Pojo\PointSummary.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics.Team\TeamAggregatedStatsDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics.Team\TeamPlayerAggregatedStatsDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\AggregatedStat.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\AggregatedStats.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\AggregatedStatsKey.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\ChampionStatInfo.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\EndOfGameStats.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\FellowPlayerInfo.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\LeaverPenaltyStats.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\PlayerGameStats.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\PlayerLifetimeStats.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\PlayerParticipantStatsSummary.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\PlayerStats.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\PlayerStatSummaries.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\PlayerStatSummary.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\RawStat.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\RawStatDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\RecentGames.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\SummaryAggStat.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\SummaryAggStats.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Statistics\TimeTrackedStat.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Boost\SummonerActiveBoostsDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Masterybook\MasteryBookDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Masterybook\MasteryBookPageDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Masterybook\TalentEntry.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Runes\SummonerRune.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Runes\SummonerRuneInventory.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Spellbook\SlotEntry.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Spellbook\SpellBookDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner.Spellbook\SpellBookPageDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\AllPublicSummonerDataDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\AllSummonerData.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\BasePublicSummonerDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\PublicSummoner.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\RuneSlot.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\Summoner.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\SummonerCatalog.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\SummonerDefaultSpells.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\SummonerLevel.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\SummonerLevelAndPoints.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\SummonerTalentsAndPoints.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\Talent.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\TalentGroup.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Summoner\TalentRow.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Systemstate\ClientSystemStatesNotification.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Platform.Trade\TradeContractDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team.Dto\PlayerDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team.Dto\RosterDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team.Dto\TeamDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team.Dto\TeamMemberInfoDTO.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team.Stats\MatchHistorySummary.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team.Stats\TeamStatDetail.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team.Stats\TeamStatSummary.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team\CreatedTeam.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team\TeamId.cs" />
+    <Compile Include="LoLLauncher.RiotObjects.Team\TeamInfo.cs" />
+    <Compile Include="LoLLauncher.RiotObjects\InternalNameAttribute.cs" />
+    <Compile Include="LoLLauncher.RiotObjects\RiotGamesObject.cs" />
+    <Compile Include="LoLLauncher.RiotObjects\SummonerNames.cs" />
+    <Compile Include="LoLLauncher.RiotObjects\UnclassedObject.cs" />
+    <Compile Include="LoLLauncher\AllowSpectators.cs" />
+    <Compile Include="LoLLauncher\ClassDefinition.cs" />
+    <Compile Include="LoLLauncher\CompetitiveSeason.cs" />
+    <Compile Include="LoLLauncher\CustomGameTypes.cs" />
+    <Compile Include="LoLLauncher\Error.cs" />
+    <Compile Include="LoLLauncher\ErrorType.cs" />
+    <Compile Include="LoLLauncher\GameLobbyGuiState.cs" />
+    <Compile Include="LoLLauncher\GameMode.cs" />
+    <Compile Include="LoLLauncher\GameType.cs" />
+    <Compile Include="LoLLauncher\GuiState.cs" />
+    <Compile Include="LoLLauncher\LocaleValue.cs" />
+    <Compile Include="LoLLauncher\LoginQueueValue.cs" />
+    <Compile Include="LoLLauncher\LoLConnection.cs" />
+    <Compile Include="LoLLauncher\Packet.cs" />
+    <Compile Include="LoLLauncher\QueueTypes.cs" />
+    <Compile Include="LoLLauncher\QueueTypes2.cs" />
+    <Compile Include="LoLLauncher\RegioN.cs" />
+    <Compile Include="LoLLauncher\RegionInfo.cs" />
+    <Compile Include="LoLLauncher\RTMPSDecoder.cs" />
+    <Compile Include="LoLLauncher\RTMPSEncoder.cs" />
+    <Compile Include="LoLLauncher\ServerValue.cs" />
+    <Compile Include="LoLLauncher\StringEnum.cs" />
+    <Compile Include="LoLLauncher\StringValue.cs" />
+    <Compile Include="LoLLauncher\TypedObject.cs" />
+    <Compile Include="LoLLauncher\UseGarenaValue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RitoBot\EnumerableExtensions.cs" />
+    <Compile Include="RitoBot\OldVoliBot.cs" />
+    <Compile Include="VoliBot.BaseRegions\BR.cs" />
+    <Compile Include="VoliBot.BaseRegions\EUNE.cs" />
+    <Compile Include="VoliBot.BaseRegions\EUW.cs" />
+    <Compile Include="VoliBot.BaseRegions\KR.cs" />
+    <Compile Include="VoliBot.BaseRegions\LAN.cs" />
+    <Compile Include="VoliBot.BaseRegions\LAS.cs" />
+    <Compile Include="VoliBot.BaseRegions\NA.cs" />
+    <Compile Include="VoliBot.BaseRegions\OCE.cs" />
+    <Compile Include="VoliBot.BaseRegions\RU.cs" />
+    <Compile Include="VoliBot.BaseRegions\TR.cs" />
+    <Compile Include="VoliBot.LoLLauncher.RiotObjects.Platform.Messaging\SimpleDialogMessageResponse.cs" />
+    <Compile Include="VoliBot.Properties\Resources.cs" />
+    <Compile Include="VoliBot.Properties\Settings.cs" />
+    <Compile Include="VoliBot.Utils\Basic.cs" />
+    <Compile Include="VoliBot.Utils\Config.cs" />
+    <Compile Include="VoliBot.Utils\Enums.cs" />
+    <Compile Include="VoliBots\exListBox.cs" />
+    <Compile Include="VoliBots\exListBoxItem.cs" />
+    <Compile Include="VoliBot\AccountInBox.cs" />
+    <Compile Include="VoliBot\AccountManager.cs" />
+    <Compile Include="VoliBot\AccountManager_ADD.cs" />
+    <Compile Include="VoliBot\AccountManager_TEST.cs" />
+    <Compile Include="VoliBot\BaseRegion.cs" />
+    <Compile Include="VoliBot\console.cs" />
+    <Compile Include="VoliBot\EnumerableExtensions.cs" />
+    <Compile Include="VoliBot\GifImage.cs" />
+    <Compile Include="VoliBot\msgStatus.cs" />
+    <Compile Include="VoliBot\old_volibot.cs" />
+    <Compile Include="VoliBot\Program.cs" />
+    <Compile Include="VoliBot\RichTextBoxExtensions.cs" />
+    <Compile Include="VoliBot\vClient.cs" />
+    <Compile Include="VoliBot\VoliBot.cs" />
+    <Compile Include="VoliBot\WelcomeWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="VoliBot.Properties\Resources.resources" />
+    <EmbeddedResource Include="VoliBot\AccountManager.resources" />
+    <EmbeddedResource Include="VoliBot\AccountManager_ADD.resources" />
+    <EmbeddedResource Include="VoliBot\AccountManager_TEST.resources" />
+    <EmbeddedResource Include="VoliBot\console.resources" />
+    <EmbeddedResource Include="VoliBot\old_volibot.resources" />
+    <EmbeddedResource Include="VoliBot\vClient.resources" />
+    <EmbeddedResource Include="VoliBot\VoliBot.resources" />
+    <EmbeddedResource Include="VoliBot\WelcomeWindow.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
